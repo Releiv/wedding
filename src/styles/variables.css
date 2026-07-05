@@ -1,0 +1,61 @@
+:root {
+  /* Colors */
+  --primary-color: #C4956A;      
+  --primary-dark: #8D6E4A;       
+  --primary-light: #DEB887;         
+  --text-dark: #3E2723;          
+  --text-light: #FFFFFF;
+  --bg-white: #FDF8F3;           
+  
+  /* Font Families */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-family-serif: 'Playfair Display', 'Georgia', serif;
+  --font-family-script: 'Great Vibes', 'Brush Script MT', cursive;
+  --font-family-elegant: 'EB Garamond', 'Georgia', serif;
+  
+  /* Font Sizes */
+  --fs-xs: 14px;
+  --fs-sm: 16px;
+  --fs-md: 20px;
+  --fs-lg: 25px;
+  --fs-xl: 32px;
+  --fs-2xl: 41px;
+  --fs-3xl: 56px;
+  --fs-4xl: 72px;
+  
+  /* Spacing */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 40px;
+  --space-xl: 60px;
+  --space-2xl: 100px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 30px;
+  
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-medium: 0.7s ease;
+  --transition-slow: 1s ease;
+  --transition-very-slow: 4s ease;
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+  :root {
+    --fs-xs: 12px;
+    --fs-sm: 13px;
+    --fs-md: 15px;
+    --fs-lg: 15px;
+    --fs-xl: 16px;
+    --fs-2xl: 20px;
+    --fs-3xl: 28px;
+    --fs-4xl: 36px;
+    --space-lg: 20px;
+    --space-xl: 30px;
+    --space-2xl: 50px;
+  }
+}

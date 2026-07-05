@@ -1,0 +1,187 @@
+.invitation {
+  position: relative;
+  padding: 40px 20px;
+  background: #E5E5DD;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.decorBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 800px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.bgImage {
+  width: 100%;
+  height: auto;
+}
+
+.decorLeaf {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 80px;
+  opacity: 0.2;
+}
+
+.decorFlower {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+  width: 60px;
+  opacity: 0.2;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.topLine,
+.bottomLine {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+}
+
+.topLine img,
+.bottomLine img {
+  width: 100%;
+  height: auto;
+}
+
+.topLine {
+  margin-bottom: 20px;
+}
+
+.bottomLine {
+  margin-top: 20px;
+}
+
+.dateWrapper {
+  margin-bottom: 20px;
+}
+
+.date {
+  font-family: var(--font-family-script);
+  font-size: var(--fs-3xl);
+  color: var(--primary-color);
+  display: block;
+}
+
+.textWrapper {
+  padding: 20px 0;
+}
+
+.text {
+  font-family: var(--font-family-elegant);
+  font-size: var(--fs-lg);
+  line-height: 1.8;
+  color: var(--primary-dark);
+  font-weight: 400;
+  white-space: pre-line;
+}
+
+.location {
+  margin-top: 50px;
+  padding: 30px;
+  border-top: 1px solid rgba(231, 131, 157, 0.2);
+}
+
+.locationTitle {
+  font-family: var(--font-family-serif);
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 12px;
+}
+
+.locationAddress {
+  font-family: var(--font-family-elegant);
+  font-size: var(--fs-sm);
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.mapLink {
+  display: inline-block;
+  padding: 10px 24px;
+  background: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 25px;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  font-family: var(--font-family);
+}
+
+.mapLink:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(231, 131, 157, 0.3);
+}
+
+@media (max-width: 639px) {
+  .invitation {
+    padding: 50px 16px;
+  }
+  
+  .decorLeaf {
+    width: 50px;
+    right: 2%;
+  }
+  
+  .decorFlower {
+    width: 40px;
+    left: 1%;
+  }
+  
+  .topLine {
+    margin-bottom: 20px;
+  }
+  
+  .bottomLine {
+    margin-top: 20px;
+  }
+  
+  .textWrapper {
+    padding: 10px 0;
+  }
+  
+  .text {
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+  }
+  
+  .location {
+    margin-top: 30px;
+    padding: 20px;
+  }
+  
+  .locationTitle {
+    font-size: var(--fs-sm);
+  }
+  
+  .locationAddress {
+    font-size: var(--fs-xs);
+  }
+  
+  .date {
+    font-size: var(--fs-xl);
+  }
+}

@@ -1,0 +1,280 @@
+.schedule {
+  position: relative;
+  padding: 80px 20px;
+  background: #E5E5DD;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Decorations */
+.decorDot1 {
+  position: absolute;
+  top: 20%;
+  left: 8%;
+  width: 40px;
+  opacity: 0.4;
+}
+
+.decorDot2 {
+  position: absolute;
+  top: 45%;
+  left: 8%;
+  width: 40px;
+  opacity: 0.4;
+}
+
+.decorDot3 {
+  position: absolute;
+  top: 70%;
+  left: 8%;
+  width: 40px;
+  opacity: 0.4;
+}
+
+.decorLeaf1 {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 60px;
+  opacity: 0.2;
+}
+
+.decorLeaf2 {
+  position: absolute;
+  bottom: 20%;
+  right: 8%;
+  width: 50px;
+  opacity: 0.2;
+}
+
+.decorFlower {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+  width: 80px;
+  opacity: 0.2;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.headerLine {
+  display: block;
+  margin: 0 auto 16px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 1px;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  transition: all var(--transition-fast);
+  background: rgba(231, 131, 157, 0.05);
+}
+
+.timelineItem:hover {
+  background: rgba(231, 131, 157, 0.1);
+  transform: translateX(5px);
+}
+
+.timeWrapper {
+  min-width: 80px;
+}
+
+.time {
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 0.5px;
+}
+
+.lineWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.timelineLine {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary-color), transparent);
+  position: relative;
+}
+
+.timelineDot {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.labelWrapper {
+  min-width: 120px;
+  text-align: right;
+}
+
+.label {
+  font-size: var(--fs-md);
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* Decor backgrounds */
+.decorBg1,
+.decorBg2 {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.05;
+}
+
+.decorBg1 {
+  top: 10%;
+  right: -5%;
+  width: 40%;
+}
+
+.decorBg2 {
+  bottom: 10%;
+  left: -5%;
+  width: 40%;
+}
+
+.decorBg1 img,
+.decorBg2 img {
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+  .schedule {
+    padding: 50px 16px;
+  }
+  
+  .header {
+    margin-bottom: 40px;
+  }
+  
+  .headerLine {
+    max-width: 200px;
+  }
+  
+  .title {
+    font-size: var(--fs-xl);
+  }
+  
+  .timelineItem {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 16px;
+    gap: 8px;
+  }
+  
+  .timeWrapper {
+    min-width: auto;
+  }
+  
+  .time {
+    font-size: var(--fs-2xl);
+  }
+  
+  .lineWrapper {
+    padding: 5px 0;
+  }
+  
+  .labelWrapper {
+    min-width: auto;
+    text-align: center;
+  }
+  
+  .label {
+    font-size: var(--fs-sm);
+  }
+  
+  .decorDot1,
+  .decorDot2,
+  .decorDot3 {
+    width: 25px;
+    left: 2%;
+  }
+  
+  .decorLeaf1 {
+    width: 35px;
+    right: 2%;
+  }
+  
+  .decorLeaf2 {
+    width: 30px;
+    right: 4%;
+  }
+  
+  .decorFlower {
+    width: 40px;
+    left: 1%;
+  }
+
+  .title {
+    font-family: var(--font-family-serif);
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--primary-dark);
+    letter-spacing: 1px;
+  }
+
+  .time {
+    font-family: var(--font-family-serif);
+    font-size: var(--fs-2xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+  }
+
+  .label {
+    font-family: var(--font-family-elegant);
+    font-size: var(--fs-md);
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+}

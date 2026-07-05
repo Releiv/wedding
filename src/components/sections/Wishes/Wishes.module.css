@@ -1,0 +1,178 @@
+.wishes {
+  position: relative;
+  padding: 80px 20px;
+  background: #E5E5DD;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Background */
+.decorBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 600px;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.bgImage {
+  width: 100%;
+  height: auto;
+}
+
+/* Decorations */
+.decorFlower1 {
+  position: absolute;
+  top: 10%;
+  right: 5%;
+  width: 100px;
+  opacity: 0.15;
+}
+
+.decorFlower2 {
+  position: absolute;
+  bottom: 10%;
+  left: 3%;
+  width: 80px;
+  opacity: 0.15;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.iconWrapper {
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 50px;
+  height: auto;
+  opacity: 0.5;
+}
+
+.title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.textWrapper {
+  background: rgba(231, 131, 157, 0.05);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(231, 131, 157, 0.1);
+}
+
+.description {
+  font-size: var(--fs-lg);
+  line-height: 1.8;
+  color: var(--text-dark);
+  font-weight: 400;
+}
+
+.noteWrapper {
+  background: rgba(208, 94, 120, 0.08);
+  border-radius: 12px;
+  padding: 20px 30px;
+  border: 2px dashed var(--primary-color);
+}
+
+.note {
+  font-size: var(--fs-md);
+  color: var(--primary-dark);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.bottomLine {
+  margin: 40px auto 0;
+  max-width: 400px;
+  width: 100%;
+}
+
+.bottomLine img {
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile */
+@media (max-width: 639px) {
+  .wishes {
+    padding: 50px 16px;
+  }
+  
+  .decorFlower1 {
+    width: 50px;
+    right: 2%;
+  }
+  
+  .decorFlower2 {
+    width: 40px;
+    left: 1%;
+  }
+  
+  .icon {
+    width: 35px;
+  }
+  
+  .title {
+    font-size: var(--fs-xl);
+    margin-bottom: 20px;
+  }
+  
+  .textWrapper {
+    padding: 20px;
+  }
+  
+  .description {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+  }
+  
+  .noteWrapper {
+    padding: 16px 20px;
+  }
+  
+  .note {
+    font-size: var(--fs-sm);
+  }
+  
+  .bottomLine {
+    margin-top: 30px;
+    max-width: 250px;
+  }
+
+  .title {
+    font-family: var(--font-family-serif);
+    font-size: var(--fs-xl);
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  .description {
+    font-family: var(--font-family-elegant);
+    font-size: var(--fs-lg);
+    line-height: 1.8;
+    color: var(--text-dark);
+    font-weight: 400;
+  }
+}

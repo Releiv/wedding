@@ -1,0 +1,1 @@
+export { Wishes } from './Wishes'

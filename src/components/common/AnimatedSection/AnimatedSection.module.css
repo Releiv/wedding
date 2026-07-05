@@ -1,0 +1,49 @@
+.animatedSection {
+  opacity: 0;
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.fadeUp {
+  transform: translateY(30px);
+}
+
+.fadeUp.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeLeft {
+  transform: translateX(100px);
+}
+
+.fadeLeft.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.fadeIn {
+  transform: none;
+}
+
+.fadeIn.visible {
+  opacity: 1;
+}
+
+.zoomIn {
+  transform: scale(0.9);
+}
+
+.zoomIn.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 639px) {
+  .fadeUp {
+    transform: translateY(15px);
+  }
+  
+  .fadeLeft {
+    transform: translateX(50px);
+  }
+}
