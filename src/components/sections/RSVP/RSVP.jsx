@@ -6,6 +6,12 @@ import { FloatingElement } from '../../ui/FloatingElement'
 import { Button } from '../../ui/Button'
 import styles from './RSVP.module.css'
 
+const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL
+
+if (!GOOGLE_SCRIPT_URL) {
+  console.warn('⚠️ VITE_GOOGLE_SCRIPT_URL не задан в .env')
+}
+
 export function RSVP() {
   const [formData, setFormData] = useState({
     name: '',
@@ -15,6 +21,8 @@ export function RSVP() {
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState('')
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -39,11 +47,33 @@ export function RSVP() {
     }
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form data:', formData)
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 3000)
+    setIsLoading(true)
+    setError('')
+
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          attendance: formData.attendance,
+          drinks: formData.drinks.join(', '),
+          stay: formData.stay,
+        }),
+      })
+
+      setIsSubmitted(true)
+      
+    } catch {
+      setError('Ошибка при отправке. Попробуйте еще раз.')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -68,7 +98,10 @@ export function RSVP() {
 
           <p className={styles.title}>{content.rsvp.title}</p>
 
+          {/* === ФОРМА ВСЕГДА ВИДНА === */}
           <form onSubmit={handleSubmit} className={styles.form}>
+            {error && <div className={styles.errorMessage}>{error}</div>}
+
             <div className={styles.formGroup}>
               <label className={styles.label}>{content.rsvp.formLabels.name}</label>
               <p className={styles.subtitle}>{content.rsvp.formLabels.nameSubtitle}</p>
@@ -80,6 +113,7 @@ export function RSVP() {
                 className={styles.input}
                 placeholder="Введите ваше имя и фамилию"
                 required
+                disabled={isSubmitted}  // ← блокируем, но не скрываем
               />
             </div>
 
@@ -96,6 +130,7 @@ export function RSVP() {
                       onChange={handleChange}
                       className={styles.radioInput}
                       required
+                      disabled={isSubmitted}
                     />
                     <span className={styles.radioCustom} />
                     <span className={styles.radioText}>{option}</span>
@@ -116,6 +151,7 @@ export function RSVP() {
                       checked={formData.drinks.includes(option)}
                       onChange={handleChange}
                       className={styles.checkboxInput}
+                      disabled={isSubmitted}
                     />
                     <span className={styles.checkboxCustom} />
                     <span className={styles.checkboxText}>{option}</span>
@@ -137,6 +173,7 @@ export function RSVP() {
                       onChange={handleChange}
                       className={styles.radioInput}
                       required
+                      disabled={isSubmitted}
                     />
                     <span className={styles.radioCustom} />
                     <span className={styles.radioText}>{option}</span>
@@ -145,10 +182,27 @@ export function RSVP() {
               </div>
             </div>
 
-            <Button type="submit" size="large" className={styles.submitButton}>
-              {isSubmitted ? '✅ Отправлено!' : content.rsvp.buttonText}
+            <Button 
+              type="submit" 
+              size="large" 
+              className={styles.submitButton} 
+              disabled={isLoading || isSubmitted}
+            >
+              {isLoading ? '⏳ Отправка...' : isSubmitted ? 'Отправлено' : content.rsvp.buttonText}
             </Button>
           </form>
+
+          {/* === СООБЩЕНИЕ ОБ УСПЕХЕ — ПОЯВЛЯЕТСЯ НИЖЕ ФОРМЫ === */}
+          {isSubmitted && (
+            <div className={styles.successMessage}>
+              <p className={styles.successText}>
+                Спасибо за ответ! 💕
+              </p>
+              <p className={styles.successSubtext}>
+                Ждём вас на свадьбе!
+              </p>
+            </div>
+          )}
 
           <div className={styles.bottomLine}>
             <img src={images.sectionLine4} alt="" />
