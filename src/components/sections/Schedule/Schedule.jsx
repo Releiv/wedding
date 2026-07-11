@@ -8,7 +8,6 @@ export function Schedule() {
   return (
     <section className={styles.schedule}>
       <div className={styles.container}>
-        {/* Декоративные элементы */}
         <FloatingElement animation="pulse-bounce" className={styles.decorDot1}>
           <img src={images.dot} alt="" />
         </FloatingElement>
@@ -34,25 +33,25 @@ export function Schedule() {
         </FloatingElement>
 
         <AnimatedSection animation="fade-up" className={styles.content}>
-          {/* Заголовок */}
           <div className={styles.header}>
             <img src={images.sectionLine4} alt="" className={styles.headerLine} />
             <h2 className={styles.title}>{content.schedule.title}</h2>
             <img src={images.sectionLine5} alt="" className={styles.headerLine} />
           </div>
 
-          {/* Расписание */}
+          {/* === КАРТОЧКИ С СЕРДЕЧКОМ === */}
           <div className={styles.timeline}>
             {content.schedule.items.map((item, index) => (
               <div key={index} className={styles.timelineItem}>
                 <div className={styles.timeWrapper}>
                   <span className={styles.time}>{item.time}</span>
                 </div>
-                <div className={styles.lineWrapper}>
-                  <div className={styles.timelineLine}>
-                    <span className={styles.timelineDot} />
-                  </div>
+                
+                {/* СЕРДЕЧКО ПОСЕРЕДИНЕ */}
+                <div className={styles.heartWrapper}>
+                  <span className={styles.heartIcon}>❤️</span>
                 </div>
+                
                 <div className={styles.labelWrapper}>
                   <span className={styles.label}>{item.label}</span>
                 </div>
@@ -60,7 +59,6 @@ export function Schedule() {
             ))}
           </div>
 
-          {/* Декоративные фоны */}
           <div className={styles.decorBg1}>
             <img src={images.scheduleBg1} alt="" />
           </div>

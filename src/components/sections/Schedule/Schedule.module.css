@@ -71,7 +71,7 @@
 /* Header */
 .header {
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .headerLine {
@@ -82,82 +82,91 @@
 }
 
 .title {
+  font-family: var(--font-family-serif);
   font-size: var(--fs-xl);
   font-weight: 700;
   color: var(--primary-dark);
   letter-spacing: 1px;
 }
 
-/* Timeline */
+/* === КАРТОЧКИ === */
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 20px 0;
+  gap: 16px;
+  padding: 10px 0;
 }
 
 .timelineItem {
-  display: flex;
+  display: grid;
+  grid-template-columns: 100px 1fr 100px;
   align-items: center;
-  gap: 20px;
-  padding: 16px 24px;
-  border-radius: 12px;
-  transition: all var(--transition-fast);
-  background: rgba(231, 131, 157, 0.05);
+  padding: 20px 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-left: 4px solid var(--primary-color);
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
 .timelineItem:hover {
-  background: rgba(231, 131, 157, 0.1);
-  transform: translateX(5px);
+  transform: translateX(8px);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
 }
 
+/* Время — слева */
 .timeWrapper {
-  min-width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .time {
-  font-size: var(--fs-2xl);
+  font-family: var(--font-family-serif);
+  font-size: 32px;
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.5px;
 }
 
-.lineWrapper {
-  flex: 1;
+/* Сердечко — по центру */
+.heartWrapper {
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  justify-content: center;
 }
 
-.timelineLine {
-  flex: 1;
-  height: 2px;
-  background: linear-gradient(to right, var(--primary-color), transparent);
-  position: relative;
+.heartIcon {
+  font-size: 28px;
+  color: var(--primary-color);
+  animation: heartbeat 1.5s ease-in-out infinite;
+  display: inline-block;
 }
 
-.timelineDot {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 10px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 0 2px var(--primary-color);
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  14% { transform: scale(1.2); }
+  28% { transform: scale(1); }
+  42% { transform: scale(1.2); }
+  70% { transform: scale(1); }
 }
 
+/* Название — справа */
 .labelWrapper {
-  min-width: 120px;
-  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .label {
-  font-size: var(--fs-md);
-  font-weight: 500;
+  font-family: var(--font-family-serif);
+  font-size: 22px;
+  font-weight: 600;
   color: var(--text-dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: right;
 }
 
 /* Decor backgrounds */
@@ -191,90 +200,65 @@
   .schedule {
     padding: 50px 16px;
   }
-  
+
   .header {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
-  
+
   .headerLine {
     max-width: 200px;
   }
-  
+
   .title {
     font-size: var(--fs-xl);
   }
-  
+
+  .timeline {
+    gap: 12px;
+  }
+
   .timelineItem {
-    flex-direction: column;
-    align-items: stretch;
-    text-align: center;
-    padding: 16px;
+    grid-template-columns: 65px 1fr 65px;
+    padding: 16px 16px;
     gap: 8px;
   }
-  
-  .timeWrapper {
-    min-width: auto;
+
+  .timelineItem:hover {
+    transform: translateX(4px);
   }
-  
+
   .time {
-    font-size: var(--fs-2xl);
+    font-size: 20px;
   }
-  
-  .lineWrapper {
-    padding: 5px 0;
+
+  .heartIcon {
+    font-size: 20px;
   }
-  
-  .labelWrapper {
-    min-width: auto;
-    text-align: center;
-  }
-  
+
   .label {
-    font-size: var(--fs-sm);
+    font-size: 13px;
+    letter-spacing: 0.5px;
   }
-  
+
   .decorDot1,
   .decorDot2,
   .decorDot3 {
     width: 25px;
     left: 2%;
   }
-  
+
   .decorLeaf1 {
     width: 35px;
     right: 2%;
   }
-  
+
   .decorLeaf2 {
     width: 30px;
     right: 4%;
   }
-  
+
   .decorFlower {
     width: 40px;
     left: 1%;
-  }
-
-  .title {
-    font-family: var(--font-family-serif);
-    font-size: var(--fs-xl);
-    font-weight: 700;
-    color: var(--primary-dark);
-    letter-spacing: 1px;
-  }
-
-  .time {
-    font-family: var(--font-family-serif);
-    font-size: var(--fs-2xl);
-    font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 0.5px;
-  }
-
-  .label {
-    font-family: var(--font-family-elegant);
-    font-size: var(--fs-md);
-    font-weight: 500;
-    color: var(--text-dark);
   }
 }

@@ -51,40 +51,19 @@
   text-align: center;
 }
 
-.topLine,
-.bottomLine {
-  margin: 0 auto;
+.topLine {
+  margin: 0 auto 20px;
   width: 100%;
   max-width: 500px;
 }
 
-.topLine img,
-.bottomLine img {
+.topLine img {
   width: 100%;
   height: auto;
 }
 
-.topLine {
-  margin-bottom: 20px;
-}
-
-.bottomLine {
-  margin-top: 20px;
-}
-
-.dateWrapper {
-  margin-bottom: 20px;
-}
-
-.date {
-  font-family: var(--font-family-script);
-  font-size: var(--fs-3xl);
-  color: var(--primary-color);
-  display: block;
-}
-
 .textWrapper {
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .text {
@@ -94,11 +73,35 @@
   color: var(--primary-dark);
   font-weight: 400;
   white-space: pre-line;
+  margin-bottom: 0;
+}
+
+.dateWrapper {
+  margin: 15px 0 20px;
+}
+
+.date {
+  font-family: var(--font-family-script);
+  font-size: var(--fs-3xl);
+  color: var(--primary-color);
+  display: block;
+  letter-spacing: 4px;
+}
+
+.bottomLine {
+  margin: 0 auto 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.bottomLine img {
+  width: 100%;
+  height: auto;
 }
 
 .location {
-  margin-top: 50px;
-  padding: 30px;
+  margin-top: 30px;
+  padding: 20px 30px;
   border-top: 1px solid rgba(231, 131, 157, 0.2);
 }
 
@@ -107,15 +110,33 @@
   font-size: var(--fs-md);
   font-weight: 600;
   color: var(--primary-dark);
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .locationAddress {
   font-family: var(--font-family-elegant);
   font-size: var(--fs-sm);
   color: var(--text-dark);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   font-weight: 500;
+}
+
+/* === КАРТА === */
+.mapWrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 16px auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--primary-color);
+}
+
+.mapIframe {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: none;
 }
 
 .mapLink {
@@ -128,6 +149,7 @@
   font-weight: 600;
   transition: all var(--transition-fast);
   font-family: var(--font-family);
+  margin-top: 8px;
 }
 
 .mapLink:hover {
@@ -136,52 +158,58 @@
   box-shadow: 0 4px 15px rgba(231, 131, 157, 0.3);
 }
 
+/* Mobile */
 @media (max-width: 639px) {
   .invitation {
-    padding: 50px 16px;
+    padding: 30px 16px;
   }
-  
-  .decorLeaf {
-    width: 50px;
-    right: 2%;
-  }
-  
-  .decorFlower {
-    width: 40px;
-    left: 1%;
-  }
-  
+
   .topLine {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
-  
-  .bottomLine {
-    margin-top: 20px;
-  }
-  
+
   .textWrapper {
-    padding: 10px 0;
+    padding: 5px 0;
   }
-  
+
   .text {
     font-size: var(--fs-sm);
     line-height: 1.6;
   }
-  
-  .location {
-    margin-top: 30px;
-    padding: 20px;
+
+  .dateWrapper {
+    margin: 10px 0 15px;
   }
-  
+
+  .date {
+    font-size: var(--fs-2xl);
+    letter-spacing: 2px;
+  }
+
+  .bottomLine {
+    margin-bottom: 20px;
+  }
+
+  .location {
+    margin-top: 20px;
+    padding: 15px 16px;
+  }
+
   .locationTitle {
     font-size: var(--fs-sm);
   }
-  
+
   .locationAddress {
     font-size: var(--fs-xs);
   }
-  
-  .date {
-    font-size: var(--fs-xl);
+
+  .mapWrapper {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 12px auto;
+  }
+
+  .mapIframe {
+    height: 200px;
   }
 }

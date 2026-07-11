@@ -1,7 +1,7 @@
 // Все пути к изображениям - легко менять!
 export const images = {
   // Основные декоративные фоны
-  heroBg: '/src/assets/images/112.png',
+  heroBg: '/src/assets/images/titulnik.png',
   sectionBg: '/src/assets/images/titulnik',
   
   // Декоративные элементы (SVG)
