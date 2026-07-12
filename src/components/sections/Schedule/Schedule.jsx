@@ -39,20 +39,20 @@ export function Schedule() {
             <img src={images.sectionLine5} alt="" className={styles.headerLine} />
           </div>
 
-          {/* === КАРТОЧКИ С СЕРДЕЧКОМ === */}
           <div className={styles.timeline}>
             {content.schedule.items.map((item, index) => (
               <div key={index} className={styles.timelineItem}>
-                <div className={styles.timeWrapper}>
+
+                <div className={styles.iconWrapper}>
+                  <img 
+                    src={images[item.icon]} 
+                    alt={item.label} 
+                    className={styles.iconImage}
+                  />
+                </div>
+                
+                <div className={styles.infoWrapper}>
                   <span className={styles.time}>{item.time}</span>
-                </div>
-                
-                {/* СЕРДЕЧКО ПОСЕРЕДИНЕ */}
-                <div className={styles.heartWrapper}>
-                  <span className={styles.heartIcon}>❤️</span>
-                </div>
-                
-                <div className={styles.labelWrapper}>
                   <span className={styles.label}>{item.label}</span>
                 </div>
               </div>

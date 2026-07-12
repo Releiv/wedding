@@ -8,10 +8,6 @@ import styles from './RSVP.module.css'
 
 const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL
 
-if (!GOOGLE_SCRIPT_URL) {
-  console.warn('⚠️ VITE_GOOGLE_SCRIPT_URL не задан в .env')
-}
-
 export function RSVP() {
   const [formData, setFormData] = useState({
     name: '',
@@ -98,7 +94,6 @@ export function RSVP() {
 
           <p className={styles.title}>{content.rsvp.title}</p>
 
-          {/* === ФОРМА ВСЕГДА ВИДНА === */}
           <form onSubmit={handleSubmit} className={styles.form}>
             {error && <div className={styles.errorMessage}>{error}</div>}
 
@@ -113,7 +108,6 @@ export function RSVP() {
                 className={styles.input}
                 placeholder="Введите ваше имя и фамилию"
                 required
-                disabled={isSubmitted}  // ← блокируем, но не скрываем
               />
             </div>
 
@@ -130,7 +124,6 @@ export function RSVP() {
                       onChange={handleChange}
                       className={styles.radioInput}
                       required
-                      disabled={isSubmitted}
                     />
                     <span className={styles.radioCustom} />
                     <span className={styles.radioText}>{option}</span>
@@ -151,7 +144,6 @@ export function RSVP() {
                       checked={formData.drinks.includes(option)}
                       onChange={handleChange}
                       className={styles.checkboxInput}
-                      disabled={isSubmitted}
                     />
                     <span className={styles.checkboxCustom} />
                     <span className={styles.checkboxText}>{option}</span>
@@ -173,7 +165,6 @@ export function RSVP() {
                       onChange={handleChange}
                       className={styles.radioInput}
                       required
-                      disabled={isSubmitted}
                     />
                     <span className={styles.radioCustom} />
                     <span className={styles.radioText}>{option}</span>
@@ -186,13 +177,13 @@ export function RSVP() {
               type="submit" 
               size="large" 
               className={styles.submitButton} 
-              disabled={isLoading || isSubmitted}
+              disabled={isLoading}
             >
-              {isLoading ? '⏳ Отправка...' : isSubmitted ? 'Отправлено' : content.rsvp.buttonText}
+              {isLoading ? 'Отправка...' : content.rsvp.buttonText}
             </Button>
           </form>
 
-          {/* === СООБЩЕНИЕ ОБ УСПЕХЕ — ПОЯВЛЯЕТСЯ НИЖЕ ФОРМЫ === */}
+          {/* === СООБЩЕНИЕ ОБ УСПЕХЕ === */}
           {isSubmitted && (
             <div className={styles.successMessage}>
               <p className={styles.successText}>

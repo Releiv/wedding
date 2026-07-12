@@ -2,8 +2,23 @@
 export const images = {
   // Основные декоративные фоны
   heroBg: '/src/assets/images/titulnik.png',
-  sectionBg: '/src/assets/images/titulnik',
+
+  // Дрескод
+  dressCodeImage: '/src/assets/images/dress_code.png',
+
+  // Вступление
+  LebediImage: '/src/assets/images/lebedi.png',
+
+  // Подложка под карту
+  UnderMapImage: '/src/assets/images/undermap.png',
   
+  // Иконки для расписания (JPG)
+  fees: '/src/assets/icons/fees.jpg',
+  ceremony: '/src/assets/icons/ceremony.png',
+  buffet: '/src/assets/icons/buffet.png',
+  meeting: '/src/assets/icons/meeting.jpg',
+  cake: '/src/assets/icons/cake.png',
+
   // Декоративные элементы (SVG)
   decorFlower1: '/src/assets/icons/Vector_8.svg',
   decorFlower2: '/src/assets/icons/Group_91.svg',

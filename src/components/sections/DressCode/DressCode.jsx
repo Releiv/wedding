@@ -8,7 +8,6 @@ export function DressCode() {
   return (
     <section className={styles.dressCode}>
       <div className={styles.container}>
-        {/* Декоративные элементы */}
         <FloatingElement animation="float-left" className={styles.decorFlower1}>
           <img src={images.decorFlower2} alt="" />
         </FloatingElement>
@@ -22,7 +21,6 @@ export function DressCode() {
         </FloatingElement>
 
         <AnimatedSection animation="fade-up" className={styles.content}>
-          {/* Иконка раздела */}
           <div className={styles.iconWrapper}>
             <img src={images.iconSection1} alt="" className={styles.icon} />
           </div>
@@ -31,11 +29,19 @@ export function DressCode() {
           
           <p className={styles.description}>{content.dressCode.description}</p>
           
+          {/* === КАРТИНКА МЕЖДУ ТЕКСТАМИ === */}
+          <div className={styles.imageWrapper}>
+            <img 
+              src={images.dressCodeImage} 
+              alt="Дресс-код" 
+              className={styles.dressImage}
+            />
+          </div>
+          
           <div className={styles.noteWrapper}>
             <p className={styles.note}>{content.dressCode.note}</p>
           </div>
 
-          {/* Декоративные линии */}
           <div className={styles.lines}>
             <div className={styles.line} />
             <div className={styles.lineSmall} />

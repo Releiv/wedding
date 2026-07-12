@@ -88,6 +88,20 @@
   letter-spacing: 4px;
 }
 
+.imageWrapper {
+  width: 100%;
+  max-width: 400px;
+  margin: 16px auto;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.lebendiImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .bottomLine {
   margin: 0 auto 30px;
   width: 100%;
@@ -121,7 +135,6 @@
   font-weight: 500;
 }
 
-/* === КАРТА === */
 .mapWrapper {
   width: 100%;
   max-width: 600px;
@@ -158,7 +171,21 @@
   box-shadow: 0 4px 15px rgba(231, 131, 157, 0.3);
 }
 
-/* Mobile */
+/* === КАРТИНКА ПОД КНОПКОЙ === */
+.underButtonImageWrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 4px auto 0;  /* ← минимальный отступ сверху */
+  overflow: hidden;
+}
+
+.underButtonImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* === MOBILE === */
 @media (max-width: 639px) {
   .invitation {
     padding: 30px 16px;
@@ -186,6 +213,11 @@
     letter-spacing: 2px;
   }
 
+  .imageWrapper {
+    max-width: 280px;
+    margin: 12px auto;
+  }
+
   .bottomLine {
     margin-bottom: 20px;
   }
@@ -211,5 +243,10 @@
 
   .mapIframe {
     height: 200px;
+  }
+
+  .underButtonImageWrapper {
+    max-width: 100%;
+    margin: 2px auto 0;
   }
 }

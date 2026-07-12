@@ -82,9 +82,9 @@
 }
 
 .title {
-  font-family: var(--font-family-serif);
-  font-size: var(--fs-xl);
-  font-weight: 700;
+  font-family: var(--font-family-script);
+  font-size: var(--fs-3xl);
+  font-weight: 400;
   color: var(--primary-dark);
   letter-spacing: 1px;
 }
@@ -93,106 +93,71 @@
 .timeline {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   padding: 10px 0;
 }
 
 .timelineItem {
-  display: grid;
-  grid-template-columns: 100px 1fr 100px;
+  display: flex;
   align-items: center;
-  padding: 20px 30px;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border-left: 4px solid var(--primary-color);
+  gap: 24px;
+  padding: 8px 12px;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border-left: none;
   transition: all 0.3s ease;
   cursor: default;
 }
 
 .timelineItem:hover {
   transform: translateX(8px);
-  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.1);
 }
 
-/* Время — слева */
-.timeWrapper {
+/* КАРТИНКА СЛЕВА — УВЕЛИЧЕНА В 3 РАЗА */
+.iconWrapper {
+  flex-shrink: 0;
+  width: 168px;   /* 56px × 3 = 168px */
+  height: 168px;  /* 56px × 3 = 168px */
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.iconImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ТЕКСТ СПРАВА */
+.infoWrapper {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  flex-direction: column;
+  flex: 1;
 }
 
 .time {
   font-family: var(--font-family-serif);
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--primary-color);
   letter-spacing: 0.5px;
 }
 
-/* Сердечко — по центру */
-.heartWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.heartIcon {
-  font-size: 28px;
-  color: var(--primary-color);
-  animation: heartbeat 1.5s ease-in-out infinite;
-  display: inline-block;
-}
-
-@keyframes heartbeat {
-  0%, 100% { transform: scale(1); }
-  14% { transform: scale(1.2); }
-  28% { transform: scale(1); }
-  42% { transform: scale(1.2); }
-  70% { transform: scale(1); }
-}
-
-/* Название — справа */
-.labelWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 .label {
   font-family: var(--font-family-serif);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 600;
   color: var(--text-dark);
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-align: right;
 }
 
-/* Decor backgrounds */
+/* Decor backgrounds — УБРАНЫ */
 .decorBg1,
 .decorBg2 {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.05;
-}
-
-.decorBg1 {
-  top: 10%;
-  right: -5%;
-  width: 40%;
-}
-
-.decorBg2 {
-  bottom: 10%;
-  left: -5%;
-  width: 40%;
-}
-
-.decorBg1 img,
-.decorBg2 img {
-  width: 100%;
-  height: auto;
+  display: none;
 }
 
 /* Mobile */
@@ -210,33 +175,33 @@
   }
 
   .title {
-    font-size: var(--fs-xl);
+    font-family: var(--font-family-script);
+    font-size: var(--fs-3xl);
+    font-weight: 400;
+    letter-spacing: 1px;
   }
 
   .timeline {
-    gap: 12px;
+    gap: 16px;
   }
 
   .timelineItem {
-    grid-template-columns: 65px 1fr 65px;
-    padding: 16px 16px;
-    gap: 8px;
+    padding: 6px 8px;
+    gap: 14px;
   }
 
-  .timelineItem:hover {
-    transform: translateX(4px);
+  .iconWrapper {
+    width: 100px;   /* мобильная версия тоже увеличена */
+    height: 100px;
+    border-radius: 12px;
   }
 
   .time {
-    font-size: 20px;
-  }
-
-  .heartIcon {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .label {
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: 0.5px;
   }
 

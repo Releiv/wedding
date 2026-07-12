@@ -33,6 +33,14 @@ export function Invitation() {
             <span className={styles.date}>26 | 09 | 2026</span>
           </div>
 
+          <div className={styles.imageWrapper}>
+            <img 
+              src={images.LebediImage} 
+              alt="Лебеди" 
+              className={styles.lebendiImage}
+            />
+          </div>
+
           <div className={styles.bottomLine}>
             <img src={images.sectionLine2} alt="" />
           </div>
@@ -41,18 +49,17 @@ export function Invitation() {
             <p className={styles.locationTitle}>📍 {content.location.title}</p>
             <p className={styles.locationAddress}>{content.location.address}</p>
             
-            {/* === ВСТАВКА КАРТЫ === */}
-          <div className={styles.mapWrapper}>
-            <iframe 
-              src="https://yandex.ru/map-widget/v1/?ll=37.698559%2C55.781934&z=16&pt=37.698559%2C55.781934&source=constructor"
-              width="100%"
-              height="300"
-              frameBorder="0"
-              allowFullScreen
-              className={styles.mapIframe}
-              title="Карта места проведения — GOELRO Лофт"
-            />
-          </div>
+            <div className={styles.mapWrapper}>
+              <iframe 
+                src="https://yandex.ru/map-widget/v1/?ll=37.698559%2C55.781934&z=16&pt=37.698559%2C55.781934"
+                width="100%"
+                height="300"
+                frameBorder="0"
+                allowFullScreen
+                className={styles.mapIframe}
+                title="Карта GOELRO Лофт"
+              />
+            </div>
 
             <a 
               href={content.location.mapLink} 

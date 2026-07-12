@@ -65,40 +65,45 @@
 }
 
 .title {
-  font-size: var(--fs-xl);
-  font-weight: 700;
+  font-family: var(--font-family-script);
+  font-size: var(--fs-3xl);
+  font-weight: 400;
   color: var(--primary-dark);
   margin-bottom: 30px;
   letter-spacing: 1px;
 }
 
-.textWrapper {
-  background: rgba(231, 131, 157, 0.05);
+/* === ЕДИНЫЙ СТИЛЬ ДЛЯ ОБЕИХ ПОДЛОЖЕК === */
+.textWrapper,
+.noteWrapper {
+  background: rgba(196, 149, 106, 0.06);
   border-radius: 16px;
   padding: 30px;
   margin-bottom: 24px;
-  border: 1px solid rgba(231, 131, 157, 0.1);
+  border: 1px solid rgba(196, 149, 106, 0.12);
+  transition: all 0.3s ease;
 }
 
-.description {
+.textWrapper:hover,
+.noteWrapper:hover {
+  background: rgba(196, 149, 106, 0.1);
+  border-color: rgba(196, 149, 106, 0.2);
+}
+
+.textWrapper:last-child,
+.noteWrapper:last-child {
+  margin-bottom: 0;
+}
+
+/* === ОДИНАКОВЫЙ ТЕКСТ ДЛЯ ОБОИХ БЛОКОВ === */
+.description,
+.note {
+  font-family: var(--font-family-elegant);
   font-size: var(--fs-lg);
   line-height: 1.8;
   color: var(--text-dark);
   font-weight: 400;
-}
-
-.noteWrapper {
-  background: rgba(208, 94, 120, 0.08);
-  border-radius: 12px;
-  padding: 20px 30px;
-  border: 2px dashed var(--primary-color);
-}
-
-.note {
-  font-size: var(--fs-md);
-  color: var(--primary-dark);
-  font-weight: 500;
-  line-height: 1.6;
+  margin: 0;
 }
 
 .bottomLine {
@@ -133,46 +138,31 @@
   }
   
   .title {
-    font-size: var(--fs-xl);
+    font-family: var(--font-family-script);
+    font-size: var(--fs-3xl);
+    font-weight: 400;
+    color: var(--primary-dark);
     margin-bottom: 20px;
+    letter-spacing: 1px;
   }
   
-  .textWrapper {
+  .textWrapper,
+  .noteWrapper {
     padding: 20px;
+    margin-bottom: 16px;
   }
   
-  .description {
+  .description,
+  .note {
+    font-family: var(--font-family-elegant);
     font-size: var(--fs-md);
     line-height: 1.6;
-  }
-  
-  .noteWrapper {
-    padding: 16px 20px;
-  }
-  
-  .note {
-    font-size: var(--fs-sm);
+    color: var(--text-dark);
+    font-weight: 400;
   }
   
   .bottomLine {
     margin-top: 30px;
     max-width: 250px;
-  }
-
-  .title {
-    font-family: var(--font-family-serif);
-    font-size: var(--fs-xl);
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 30px;
-    letter-spacing: 1px;
-  }
-
-  .description {
-    font-family: var(--font-family-elegant);
-    font-size: var(--fs-lg);
-    line-height: 1.8;
-    color: var(--text-dark);
-    font-weight: 400;
   }
 }

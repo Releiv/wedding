@@ -1,7 +1,7 @@
 .dressCode {
   position: relative;
   padding: 80px 20px;
-  background: linear-gradient(180deg, #E5E5DD 0%, #fff5f7 100%);
+  background: #E5E5DD;
   overflow: hidden;
 }
 
@@ -58,14 +58,16 @@
 }
 
 .title {
-  font-size: var(--fs-xl);
-  font-weight: 700;
+  font-family: var(--font-family-script);
+  font-size: var(--fs-3xl);
+  font-weight: 400;
   color: var(--primary-dark);
   margin-bottom: 24px;
   letter-spacing: 1px;
 }
 
 .description {
+  font-family: var(--font-family-elegant);
   font-size: var(--fs-lg);
   line-height: 1.6;
   color: var(--text-dark);
@@ -74,7 +76,7 @@
 }
 
 .noteWrapper {
-  background: rgba(231, 131, 157, 0.1);
+  background: rgba(196, 149, 106, 0.1);
   border-radius: 12px;
   padding: 20px 30px;
   margin-top: 20px;
@@ -82,6 +84,7 @@
 }
 
 .note {
+  font-family: var(--font-family-elegant);
   font-size: var(--fs-sm);
   color: var(--primary-dark);
   font-weight: 500;
@@ -137,13 +140,19 @@
   }
   
   .title {
-    font-size: var(--fs-xl);
+    font-family: var(--font-family-script);
+    font-size: var(--fs-3xl);
+    font-weight: 400;
+    color: var(--primary-dark);
     margin-bottom: 16px;
+    letter-spacing: 1px;
   }
   
   .description {
+    font-family: var(--font-family-elegant);
     font-size: var(--fs-md);
     line-height: 1.5;
+    color: var(--text-dark);
   }
   
   .noteWrapper {
@@ -151,7 +160,9 @@
   }
   
   .note {
+    font-family: var(--font-family-elegant);
     font-size: var(--fs-xs);
+    color: var(--primary-dark);
   }
   
   .line {
@@ -160,23 +171,5 @@
   
   .lineSmall {
     width: 40px;
-  }
-
-  .title {
-    font-family: var(--font-family-serif);
-    font-size: var(--fs-xl);
-    font-weight: 700;
-    color: var(--primary-dark);
-    margin-bottom: 24px;
-    letter-spacing: 1px;
-  }
-
-  .description {
-    font-family: var(--font-family-elegant);
-    font-size: var(--fs-lg);
-    line-height: 1.6;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    font-weight: 400;
   }
 }

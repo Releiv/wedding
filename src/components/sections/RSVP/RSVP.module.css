@@ -1,7 +1,7 @@
 .rsvp {
   position: relative;
   padding: 80px 20px;
-  background: linear-gradient(180deg, #E5E5DD 0%, #ffffff 100%);
+  background: #E5E5DD;
   overflow: hidden;
 }
 
