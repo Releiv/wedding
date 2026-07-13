@@ -1,5 +1,6 @@
 import { Hero, Invitation, Schedule, DressCode, Wishes, RSVP, Contacts } from './components/sections'
 import { Countdown, MusicPlayer } from './components/ui'
+import { Marquee } from './components/common'
 import './App.css'
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
       <Wishes />
       <RSVP />
       <Contacts />
-      <Countdown targetDate="2026-09-26T00:00:00" />
+      <Marquee text="до встречи на свадьбе!" />
       <MusicPlayer />
     </div>
   )

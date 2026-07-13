@@ -82,8 +82,9 @@
 
 .date {
   font-family: var(--font-family-script);
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-4xl);
   color: var(--primary-color);
+  font-weight: 500;
   display: block;
   letter-spacing: 4px;
 }
@@ -185,6 +186,15 @@
   display: block;
 }
 
+.locationDivider {
+  margin: 30px auto;
+  width: 60%;
+  max-width: 200px;
+  height: 2px;
+  background: rgba(196, 149, 106, 0.2);
+  border-radius: 1px;
+}
+
 /* === MOBILE === */
 @media (max-width: 639px) {
   .invitation {
@@ -225,6 +235,12 @@
   .location {
     margin-top: 20px;
     padding: 15px 16px;
+  }
+
+  .locationDivider {
+    margin: 20px auto;
+    width: 40%;
+    max-width: 120px;
   }
 
   .locationTitle {

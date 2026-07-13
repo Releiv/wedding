@@ -45,13 +45,45 @@ export function Invitation() {
             <img src={images.sectionLine2} alt="" />
           </div>
 
+          {/* === ЗАГС (верхний) === */}
           <div className={styles.location}>
-            <p className={styles.locationTitle}>📍 {content.location.title}</p>
-            <p className={styles.locationAddress}>{content.location.address}</p>
+            <p className={styles.locationTitle}>📍 {content.location.zags.title}</p>
+            <p className={styles.locationAddress}>{content.location.zags.address}</p>
             
             <div className={styles.mapWrapper}>
               <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=37.698559%2C55.781934&z=16&pt=37.698559%2C55.781934"
+                src={`https://yandex.ru/map-widget/v1/?ll=${content.location.zags.mapCoords}&z=16&pt=${content.location.zags.mapCoords}`}
+                width="100%"
+                height="300"
+                frameBorder="0"
+                allowFullScreen
+                className={styles.mapIframe}
+                title="Карта ЗАГС"
+              />
+            </div>
+
+            <a 
+              href={content.location.zags.mapLink} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.mapLink}
+            >
+              Открыть на карте
+            </a>
+          </div>
+
+          {/* === РАЗДЕЛИТЕЛЬ === */}
+          <div className={styles.locationDivider} />
+
+          {/* === БАНКЕТ (нижний) === */}
+          <div className={styles.location}>
+            <p className={styles.locationTitle}>📍 {content.location.banquet.title}</p>
+            <p className={styles.locationAddress}>{content.location.banquet.address}</p>
+            <p className={styles.locationAddress}>{content.location.banquet.address2}</p>
+            
+            <div className={styles.mapWrapper}>
+              <iframe 
+                src={`https://yandex.ru/map-widget/v1/?ll=${content.location.banquet.mapCoords}&z=16&pt=${content.location.banquet.mapCoords}`}
                 width="100%"
                 height="300"
                 frameBorder="0"
@@ -62,7 +94,7 @@ export function Invitation() {
             </div>
 
             <a 
-              href={content.location.mapLink} 
+              href={content.location.banquet.mapLink} 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.mapLink}

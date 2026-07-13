@@ -110,9 +110,9 @@
   height: 50px;
   border: none;
   border-radius: 50%;
-  background: rgba(44, 26, 16, 0.85);
+  background: rgba(73, 44, 28, 0.85);
   backdrop-filter: blur(12px);
-  color: #2C1A10;
+  color: #ffffff;
   font-size: 32px;
   font-weight: 700;
   cursor: pointer;

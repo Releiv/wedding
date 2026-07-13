@@ -85,7 +85,7 @@
 
 .note {
   font-family: var(--font-family-elegant);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-md);
   color: var(--primary-dark);
   font-weight: 500;
   line-height: 1.5;
@@ -161,7 +161,7 @@
   
   .note {
     font-family: var(--font-family-elegant);
-    font-size: var(--fs-xs);
+    font-size: var(--fs-sm);
     color: var(--primary-dark);
   }
   
